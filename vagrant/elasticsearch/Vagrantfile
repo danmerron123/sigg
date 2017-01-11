@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: "echo Running"
+
+  config.vm.define "elastic1" do |elastic1|
+    elastic1.vm.box = "CentOS 7 x64 (Minimal, Shrinked, Guest Additions 4.3.26) (Monthly updates)"
+elastic1.vm.network "public_network"
+elastic1.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
+  end
+end
