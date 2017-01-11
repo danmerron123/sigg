@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: "echo Running"
+
+  config.vm.define "consoul1" do |consoul1|
+    consoul1.vm.box = "hashicorp/precise64"
+consoul1.vm.network "public_network"
+  end
+end
